@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEzIpxFV5c/5iJ7Mkah0Z" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/login.css">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="topnav">
+      <a href="/templates/index.html" class="active">Treasure Hunt</a>
+      <div id="myLinks">
+        <a href="/templates/index.html">Home</a>
+        <a href="/templates/login.html">Login In/Register</a>
+        <a href="{{ url_for('leaderboard')}}">Leaderboard</a>
+        <a href="#about">About</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-sm-6 col-md-4">
+        <div class="card border-0 shadow rounded-lg">
+          <div class="card-body">
+            <h1 class="text-center mb-4">User Registration</h1>
+            <form id="registrationForm" method="POST">
+              <div class="form-group">
+                <label for="username">
+                  {% if error1 %}
+                  <div class="alert alert-danger mb-3" role="alert">{{ error1 }}</div>
+                  {% endif %}
+                  Username:
+                </label>
+                <input type="Username" id="username" name="username" placeholder="Enter your username" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="email">
+                  {% if error2 %}
+                  <div class="alert alert-danger mb-3" role="alert">{{ error2 }}</div>
+                  {% endif %}
+                  Email:
+                </label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="password">
+                  {% if error3 %}
+                  <div class="alert alert-danger mb-3" role="alert">{{ error3 }}</div>
+                  {% endif %}
+                  Password:
+                </label>
+                <input type="password" id="password" name="password" required minlength="8" placeholder="Enter your password" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword"> 
+                  {% if error4 %}
+                  <div class="alert alert-danger mb-3" role="alert">{{ error4 }}</div>
+                  {% endif %}
+                  Confirm Password:
+                </label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8" placeholder="Confirm you password" class="form-control">
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg btn-block shadow-sm mt-4">Register</button>
+              </div>
+            </form>
+            <div class="form-group text-center mt-3">
+              <p>Already registered? <a href="/templates/login.html">Login here.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEzIpxFV5c/5iJ7Mkah0Z" crossorigin="anonymous"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

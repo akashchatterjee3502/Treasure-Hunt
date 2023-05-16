@@ -1,0 +1,233 @@
+body {
+  background-color: #1c1c1c;
+  background-image: url('/static/login.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  transform: translate(0, 0);
+  font-size: 3rem;
+  color: #fff;
+  font-size: 48px;
+  margin-top: 80px;
+  animation: pulse 2s infinite;
+}
+
+p {
+  text-align: center;
+  color: aliceblue;
+  font-size: 24px;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.cta-button {
+  display: block;
+  padding: 0 30px;
+  width: 320px;
+  height: 60px;
+  margin: 40px auto 0;
+  font-size: 24px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  background-color: #F39C12;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 5px 0 #E67E22;
+  transition: all 0.2s ease-in-out;
+  perspective: 1000px;
+  animation: slideIn 2s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #E67E22;
+  box-shadow: 0 2px 0 #E67E22;
+  transform: translateY(3px);
+}
+
+.cta-button:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.cta-button:before,
+.cta-button:after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cta-button:before {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotateX(70deg) translateZ(-40px) scale(0.9);
+}
+
+.cta-button:after {
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: rotateY(70deg) translateZ(-40px) scale(0.9);
+}
+
+.cta-button:hover:before {
+  transform: rotateX(0deg) translateZ(0) scale(1);
+  opacity: 0.6;
+}
+
+.cta-button:hover:after {
+  transform: rotateY(0deg) translateZ(0) scale(1);
+  opacity: 0.6;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 48px;
+    margin-top: 60px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .cta-button {
+    padding: 0 30px;
+    width: 300px;
+    height: 60px;
+    margin-top: 40px;
+    font-size: 24px;
+    line-height: 60px;
+    border-radius: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 64px;
+    margin-top: 100px;
+  }
+
+  p {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+
+  .cta-button {
+    padding: 0 40px;
+    width: 320px;
+    height: 70px;
+    margin-top: 50px;
+    font-size: 30px;
+    line-height: 70px;
+    border-radius: 35px;
+  }
+}
+
+nav {
+  height: 50px;
+  align-items: center;
+}
+
+.navbar {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  padding: 10px 20px;
+}
+.navbar a:hover {
+  transform: scale(1.1);
+  background-color: #ddd;
+  color: #1c1c1c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease-in-out;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.topnav {
+  overflow: hidden;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.icon {
+  float: right;
+  background: black;
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 15px;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #4b1450;
+  color: white;
+}

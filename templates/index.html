@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treasure Hunt Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="topnav">
+      <a href="/templates/index.html" class="active">Treasure Hunt</a>
+      <div id="myLinks">
+        <a href="/templates/index.html">Home</a>
+        {% if session.user_id %}
+          {% if session.user_id == admin %}
+            <a href="{{ url_for('admin') }}">Admin Dashboard</a>
+          {% endif %}
+          <a href="{{ url_for('profile') }}">My Account</a>
+        {% else %}
+          <a href="/templates/login.html">Login/Register</a>
+        {% endif %}
+        <a href="{{ url_for('leaderboard')}}">Leaderboard</a>
+        <a href="#about">About</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </nav>
+  <h1>Welcome to the Treasure Hunt Game!</h1>
+  <p>Are you ready to embark on an exciting adventure?</p>
+  <a href="/templates/themes.html" class="cta-button">Start the Treasure Hunt</a>
+  <script src="/static/script.js"></script>
+</body>
+</html>

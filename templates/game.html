@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soft Skills Treasure Hunt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/game.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="topnav">
+      <a href="/templates/index.html" class="active">Treasure Hunt</a>
+      <div id="myLinks">
+        <a href="/templates/index.html">Home</a>
+        {% if session.user_id %}
+          {% if session.user_id == admin %}
+            <a href="{{ url_for('admin') }}">Admin Dashboard</a>
+          {% endif %}
+          <a href="{{ url_for('profile') }}">My Account</a>
+        {% else %}
+          <a href="/templates/login.html">Login/Register</a>
+        {% endif %}
+        <a href="{{ url_for('leaderboard')}}">Leaderboard</a>
+        <a href="#about">About</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </nav>
+  <div class="page">
+    <div id="clue-container">
+      <h1 id="clue-text">Follow the clues to find the treasure!</h1>
+      <div class="link">
+        <ul id="options-list">
+          <li><a href="#" class="option-link">Option 1</a></li>
+          <li><a href="#" class="option-link">Option 2</a></li>
+          <li><a href="#" class="option-link">Option 3</a></li>
+          <li><a href="#" class="option-link">Option 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="/static/game.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
+
